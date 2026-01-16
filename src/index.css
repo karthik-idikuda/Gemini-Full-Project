@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+@layer utilities {
+    .glow-text {
+        text-shadow: 0 0 10px rgba(34, 211, 238, 0.7), 0 0 20px rgba(34, 211, 238, 0.4);
+    }
+    
+    .glass-panel {
+        background: rgba(0, 5, 15, 0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .border-futuristic {
+        border-image: linear-gradient(45deg, transparent 40%, #22d3ee 50%, transparent 60%) 1;
+    }
+
+    @keyframes pulse-slow {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+    }
+
+    .animate-pulse-slow {
+        animation: pulse-slow 3s ease-in-out infinite;
+    }
+}
+
+/* Custom font for sci-fi look if available, or just fallback mono */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
